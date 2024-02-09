@@ -1,0 +1,23 @@
+{
+  "name": "demoblaze-cypress-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliannyasilva/demoblaze-cypress-page.git"
+  },
+  "author": "juliannyasilva@outlook.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juliannyasilva/demoblaze-cypress-page/issues"
+  },
+  "homepage": "https://github.com/juliannyasilva/demoblaze-cypress-page#readme",
+  "devDependencies": {
+    "cypress": "^13.6.4",
+    "dotenv": "^16.4.1"
+  }
+}
