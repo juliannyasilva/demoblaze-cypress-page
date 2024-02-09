@@ -4,12 +4,12 @@ Development of an automation project for technical assessment for the company Me
 
 ## Run tests
 
-### Install npm
+### 1. Install npm
 ```
 npm install
 ```
 
-### Run tests
+### 2. Run tests
 Run by npm
 ```
 npm test
@@ -22,7 +22,7 @@ Run by Cypress UI
 npx cypress open
 ```
 
-### Test cases
+## Test cases
 
 | Test 1 |
 | - |
