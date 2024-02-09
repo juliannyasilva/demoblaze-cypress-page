@@ -9,7 +9,7 @@ const FIELD_LOGIN_PASSWORD = '#loginpassword';
 const BTN_LOGIN_CLOSE = '#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-secondary';
 const BTN_LOGIN = '#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary';
 const FIELD_USERNAME = '#nameofuser';
-
+const OPTION_LOGOUT = '#logout2';
 
 class DemoblazePage {
 
@@ -57,8 +57,16 @@ class DemoblazePage {
         cy.get(BTN_LOGIN).click();
     }
 
-    static checkWelcome() {
+    static checkLogin() {
         cy.get(FIELD_USERNAME).contains('Welcome');
+    }
+
+    static clickLogout() {
+        cy.get(OPTION_LOGOUT).click();
+    }
+
+    static checkLogout() {
+        cy.get(FIELD_USERNAME).should('be.empty');
     }
 }
 

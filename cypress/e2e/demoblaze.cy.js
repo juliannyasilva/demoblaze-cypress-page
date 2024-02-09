@@ -6,7 +6,7 @@ describe('Demoblaze tests', () => {
         DemoblazePage.visit();
     })
 
-    context('Signup', () => {
+    context('signup', () => {
         it('signup without username', () => {
             DemoblazePage.clickOptionSignup();
             DemoblazePage.typeSignupUsername(Cypress.env('username'));
@@ -45,12 +45,7 @@ describe('Demoblaze tests', () => {
             })
         })
     }),
-    context('login', () => {
-
-        beforeEach(() => {
-            DemoblazePage.visit();
-        })
-    
+    context('login', () => {    
         it('login with invalid user', () => {
             DemoblazePage.clickOptionLogin();
             DemoblazePage.clickLogin();
@@ -64,7 +59,18 @@ describe('Demoblaze tests', () => {
             DemoblazePage.typeLoginUsername(Cypress.env('username'));
             DemoblazePage.typeLoginPassword(Cypress.env('password'));
             DemoblazePage.clickLogin();
-            DemoblazePage.checkWelcome();
+            DemoblazePage.checkLogin();
+        })
+    }),
+    context('login', () => {    
+        it('logout sucess', () => {
+            DemoblazePage.clickOptionLogin();
+            DemoblazePage.typeLoginUsername(Cypress.env('username'));
+            DemoblazePage.typeLoginPassword(Cypress.env('password'));
+            DemoblazePage.clickLogin();
+            DemoblazePage.checkLogin();
+            DemoblazePage.clickLogout();
+            DemoblazePage.checkLogout();
         })
     })
     
