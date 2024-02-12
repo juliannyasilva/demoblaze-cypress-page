@@ -8,8 +8,11 @@ const FIELD_LOGIN_USERNAME = '#loginusername';
 const FIELD_LOGIN_PASSWORD = '#loginpassword';
 const BTN_LOGIN_CLOSE = '#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-secondary';
 const BTN_LOGIN = '#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary';
-const FIELD_USERNAME = '#nameofuser';
 const OPTION_LOGOUT = '#logout2';
+const OPTION_CATEGORIE_PHONE = 'Phones';
+const BTN_ADD_TO_CART = '.col-sm-12 > .btn';
+const OPTION_HOME = '.active > .nav-link';
+const OPTION_CART = '#cartur';
 
 class DemoblazePage {
 
@@ -57,16 +60,28 @@ class DemoblazePage {
         cy.get(BTN_LOGIN).click();
     }
 
-    static checkLogin() {
-        cy.get(FIELD_USERNAME).contains('Welcome');
-    }
-
     static clickLogout() {
         cy.get(OPTION_LOGOUT).click();
     }
 
-    static checkLogout() {
-        cy.get(FIELD_USERNAME).should('be.empty');
+    static clickCategoriePhones() {
+        cy.contains(OPTION_CATEGORIE_PHONE).click();
+    }
+
+    static clickPhone(name) {
+        cy.contains(name).click();
+    }
+
+    static clickAddToCart() {
+        cy.get(BTN_ADD_TO_CART).click();
+    }
+
+    static clickOptionHome() {
+        cy.get(OPTION_HOME).click();
+    }
+
+    static clickOptionCart() {
+        cy.get(OPTION_CART).click();
     }
 }
 

@@ -1,25 +1,33 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import DemoblazePage from "../page/demoblaze";
+import CartPage from "../page/demoblaze-cart";
+
+Cypress.Commands.add('signup', (username, password) => {
+    DemoblazePage.clickOptionSignup();
+    DemoblazePage.typeSignupUsername(username);
+    DemoblazePage.typeSignupPassword(password);
+    DemoblazePage.clickSignup();
+})
+
+Cypress.Commands.add('login', (username, password) => {
+    DemoblazePage.clickOptionLogin();
+    DemoblazePage.typeLoginUsername(username);
+    DemoblazePage.typeLoginPassword(password);
+    DemoblazePage.clickLogin();
+})
+
+Cypress.Commands.add('fillPlaceOrder', (name, country, city, cardNumber, month, year) => {
+    CartPage.clickPlaceOrder();
+    CartPage.typeName(name);
+    CartPage.typeCountry(country);
+    CartPage.typeCity(city);
+    CartPage.typeCreditCard(cardNumber);
+    CartPage.typeMonth(month);
+    CartPage.typeYear(year);
+    CartPage.clickPurchase();
+})
+
+Cypress.Commands.add('addPhone', (model) => {
+    DemoblazePage.clickCategoriePhones();
+    DemoblazePage.clickPhone(model);
+    DemoblazePage.clickAddToCart();
+})
